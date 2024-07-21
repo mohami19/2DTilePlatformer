@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpSpeed = 8f;
+    [SerializeField] private float climbSpeed = 5f;
+    private float startGravityScale;
     Vector2 moveInput;
     private Rigidbody2D rb;
     Animator animator;
@@ -13,11 +15,13 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        startGravityScale = rb.gravityScale;
     }
 
     void Update() {
         Run();
         FlipSprite();
+        ClimbLadder();
     }
 
     void OnMove(InputValue inputValue){
@@ -47,6 +51,19 @@ public class PlayerMovement : MonoBehaviour
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed){
             transform.localScale = new Vector2(Math.Sign(rb.velocity.x),1f);
+        }
+    }
+
+    private void ClimbLadder(){
+        if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
+            Vector2 climbVelocity = new Vector2(rb.velocity.x,moveInput.y * climbSpeed);
+            rb.velocity = climbVelocity ;
+            bool playerHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
+            animator.SetBool("isClimbing",playerHasVerticalSpeed);   
+            rb.gravityScale = 0f;
+        } else {
+            rb.gravityScale = startGravityScale;
+            animator.SetBool("isClimbing",false);   
         }
     }
 }
