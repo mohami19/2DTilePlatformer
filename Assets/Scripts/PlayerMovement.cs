@@ -7,14 +7,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpSpeed = 8f;
     [SerializeField] private float climbSpeed = 5f;
     private float startGravityScale;
-    Vector2 moveInput;
     private Rigidbody2D rb;
+    Vector2 moveInput;
+
     Animator animator;
-    CapsuleCollider2D capsuleCollider2D;
+    
+    CapsuleCollider2D bodyCollider2D;
+    BoxCollider2D feetCollider;
+    
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        bodyCollider2D = GetComponent<CapsuleCollider2D>();
+        feetCollider = GetComponent<BoxCollider2D>();
         startGravityScale = rb.gravityScale;
     }
 
@@ -34,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnJump(InputValue inputValue){
-        if (inputValue.isPressed && capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+        if (inputValue.isPressed && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
             rb.velocity += new Vector2(0f,jumpSpeed);
         }
     }
@@ -55,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void ClimbLadder(){
-        if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
+        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
             Vector2 climbVelocity = new Vector2(rb.velocity.x,moveInput.y * climbSpeed);
             rb.velocity = climbVelocity ;
             bool playerHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
