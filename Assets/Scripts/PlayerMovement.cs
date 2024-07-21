@@ -4,12 +4,15 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpSpeed = 8f;
     Vector2 moveInput;
     private Rigidbody2D rb;
     Animator animator;
+    CapsuleCollider2D capsuleCollider2D;
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     void Update() {
@@ -26,10 +29,16 @@ public class PlayerMovement : MonoBehaviour
         // }
     }
 
+    void OnJump(InputValue inputValue){
+        if (inputValue.isPressed && capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+            rb.velocity += new Vector2(0f,jumpSpeed);
+        }
+    }
+
     void Run(){
         Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed,rb.velocity.y);
         rb.velocity = playerVelocity ;
-        
+
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         animator.SetBool("isRunning",playerHasHorizontalSpeed);
     }
