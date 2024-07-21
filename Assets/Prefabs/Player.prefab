@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6835106716454934793}
   - component: {fileID: 5078095902866296653}
   - component: {fileID: 7800607361178897630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 640148967
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 880948860, guid: 8b48cb1286926e747bd1faba3aa8af50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,7 +119,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7022313735278888194}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 43aacf9a575644e43bd1e5241b800d96, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -142,8 +142,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0381642, y: -0.054977894}
-  m_Size: {x: 0.597564, y: 1.0599556}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.7, y: 1.12}
   m_Direction: 0
 --- !u!50 &6835106716454934793
 Rigidbody2D:
@@ -160,7 +160,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 7
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -170,7 +170,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5078095902866296653
 MonoBehaviour:
@@ -214,3 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db7c48e152dc1242a3d584cc5f94452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpSpeed: 23
+  climbSpeed: 5
