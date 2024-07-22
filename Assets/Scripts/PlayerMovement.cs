@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     private void FlipSprite() {
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed){
-            transform.localScale = new Vector2(Math.Sign(rb.velocity.x),1f);
+            transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x),1f);
         }
     }
 
