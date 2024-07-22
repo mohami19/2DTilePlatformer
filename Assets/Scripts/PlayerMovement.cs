@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpSpeed = 8f;
     [SerializeField] private float climbSpeed = 5f;
     [SerializeField] private Vector2 deathKick = new Vector2(10f,10f);
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform gun;
     private float startGravityScale;
     private Rigidbody2D rb;
     Vector2 moveInput;
@@ -15,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     
     CapsuleCollider2D bodyCollider2D;
     BoxCollider2D feetCollider;
-
     bool isAlive = true;
 
     void Start() {
@@ -51,6 +52,12 @@ public class PlayerMovement : MonoBehaviour
             if (inputValue.isPressed && feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
                 rb.velocity += new Vector2(0f,jumpSpeed);
             }
+        }
+    }
+
+    void OnFire(InputValue inputValue){
+        if (isAlive) {
+            Instantiate(bullet,gun.position,transform.rotation);
         }
     }
 

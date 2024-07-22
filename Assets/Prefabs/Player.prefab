@@ -35,7 +35,8 @@ Transform:
   m_LocalPosition: {x: 0.39, y: 4.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6999612723399491883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6096403049831679170
@@ -98,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 640148967
-  m_SortingLayer: 5
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 880948860, guid: 8b48cb1286926e747bd1faba3aa8af50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -143,8 +144,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.02}
-  m_Size: {x: 0.7, y: 1.0679736}
+  m_Offset: {x: -0.07300985, y: -0.05300963}
+  m_Size: {x: 0.55398035, y: 0.9219544}
   m_Direction: 0
 --- !u!50 &6835106716454934793
 Rigidbody2D:
@@ -218,6 +219,9 @@ MonoBehaviour:
   moveSpeed: 5
   jumpSpeed: 23
   climbSpeed: 5
+  deathKick: {x: 10, y: 10}
+  bullet: {fileID: 0}
+  gun: {fileID: 0}
 --- !u!61 &4156813963676940647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -263,3 +267,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4903183, y: 0.117465496}
   m_EdgeRadius: 0
+--- !u!1 &7961786121996414895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6999612723399491883}
+  m_Layer: 8
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6999612723399491883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7961786121996414895}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2631128619824762065}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

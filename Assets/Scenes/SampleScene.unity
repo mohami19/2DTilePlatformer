@@ -12801,7 +12801,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.73, y: 0.57, z: -10}
+  m_LocalPosition: {x: 16.15, y: -2.29, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12918,7 +12918,7 @@ Transform:
   m_GameObject: {fileID: 750876538}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.62076, y: 0.6212729, z: -10.084431}
+  m_LocalPosition: {x: -18.740763, y: -2.238727, z: -10.084431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13008,7 +13008,7 @@ Transform:
   m_GameObject: {fileID: 754908760}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.62076, y: 0.6212729, z: -10.084431}
+  m_LocalPosition: {x: -18.740763, y: -2.238727, z: -10.084431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13137,7 +13137,7 @@ Transform:
   m_GameObject: {fileID: 792067536}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.62076, y: 0.6212729, z: -10.084431}
+  m_LocalPosition: {x: -18.740763, y: -2.238727, z: -10.084431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15577,6 +15577,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1114070556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6999612723399491883, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
+  m_PrefabInstance: {fileID: 7616760491615734034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148946898
 GameObject:
   m_ObjectHideFlags: 0
@@ -15594,7 +15599,7 @@ GameObject:
   - component: {fileID: 1148946905}
   m_Layer: 11
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15681,7 +15686,7 @@ Transform:
   m_GameObject: {fileID: 1148946898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.147, y: 0.277, z: 0}
+  m_LocalPosition: {x: 27.136, y: -9.717, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15794,7 +15799,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.41438186, y: -0.31913736}
+  m_Offset: {x: 0.4160185, y: -0.3633376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15805,7 +15810,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.04225135, y: 0.71803397}
+  m_Size: {x: 0.045526505, y: 0.80643445}
   m_EdgeRadius: 0
 --- !u!1 &1170310736
 GameObject:
@@ -51856,11 +51861,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2631128619824762065, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.73
+      value: 16.15
       objectReference: {fileID: 0}
     - target: {fileID: 2631128619824762065, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.57
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 2631128619824762065, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51898,10 +51903,22 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 43aacf9a575644e43bd1e5241b800d96, type: 2}
+    - target: {fileID: 6999612723399491883, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7022313735278888194, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7800607361178897630, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1114070556}
+    - target: {fileID: 7800607361178897630, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2446647707521707160, guid: 23332239647fa974b977e0bef38d374f, type: 3}
     - target: {fileID: 7800607361178897630, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
       propertyPath: deathKick.x
       value: -10
