@@ -51646,6 +51646,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7800607361178897630, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
+      propertyPath: deathKick.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800607361178897630, guid: ab15d8406b3c0e6459537f15ff4e6673, type: 3}
+      propertyPath: deathKick.y
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
