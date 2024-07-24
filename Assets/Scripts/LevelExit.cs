@@ -16,7 +16,7 @@ public class LevelExit : MonoBehaviour
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         yield return new WaitForSecondsRealtime(loadDelay);
         int nextSceneIndex = currentScene + 1;
-        if (nextSceneIndex < SceneManager.sceneCount) {
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) {
             SceneManager.LoadScene(nextSceneIndex);
         } else {
             SceneManager.LoadScene(0);
